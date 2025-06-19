@@ -9,12 +9,10 @@ import tomlhold
 import v440
 
 from felice._core import utils
-from felice._core.calcs.Block import Block
 from felice._core.calcs.Calc import Calc
 from felice._core.calcs.Draft import Draft
 from felice._core.calcs.File import File
 from felice._core.calcs.Git import Git
-from felice._core.calcs.Project import Project
 from felice._core.calcs.Text import Text
 
 

@@ -35,7 +35,7 @@ keywords = []
 name = "felice"
 readme = "README.rst"
 requires-python = ">=3.11"
-version = "0.0.0.dev2"
+version = "0.0.0.dev3"
 
 [project.license]
 file = "LICENSE.txt"
