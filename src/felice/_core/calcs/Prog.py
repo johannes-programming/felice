@@ -72,78 +72,6 @@ class Prog(Calc):
                 return y
         return x
 
-    def _calc_block(self):
-        return Block(self)
-
-    def _calc_build_system(self):
-        ans = self.pp.get("build-system")
-        if type(ans) is dict:
-            ans = self.easy_dict(ans)
-        if ans is not None:
-            return ans
-        ans = dict()
-        ans["requires"] = ["setuptools>=61.0"]
-        ans["build-backend"] = "setuptools.build_meta"
-        ans = self.easy_dict(ans)
-        return ans
-
-    def _calc_development_status(self):
-        kwarg = self.kwargs["development_status"]
-        if kwarg == "infer":
-            kwarg = self.development_status_infered
-        if kwarg == "":
-            return ""
-        kwarg = kwarg.strip().lower()
-        values = [
-            "1 - Planning",
-            "2 - Pre-Alpha",
-            "3 - Alpha",
-            "4 - Beta",
-            "5 - Production/Stable",
-            "6 - Mature",
-            "7 - Inactive",
-        ]
-        i = float("inf")
-        ans = list()
-        for x in values:
-            try:
-                j = x.lower().index(kwarg)
-            except ValueError:
-                continue
-            if j == i:
-                ans.append(x)
-            if j < i:
-                ans = [x]
-                i = j
-        (ans,) = ans
-        return ans
-
-    def _calc_development_status_infered(self):
-        try:
-            v = v440.Version(self.project.version)
-        except:
-            return ""
-        if v.pre.phase == "a":
-            return "alpha"
-        if v.pre.phase == "b":
-            return "beta"
-        if v == self.version_default:
-            return "planning"
-        if v.release < "0.1":
-            return "pre"
-        if v.isdevrelease():
-            return "alpha"
-        if v.pre.phase == "rc":
-            return "beta"
-        if not v.ispostrelease():
-            if v.release.major < 1:
-                return "alpha"
-            if v.release.major > 1900:
-                return "beta"
-        if v.release.major < 4:
-            return "stable"
-        return "mature"
-
     def _calc_draft(self):
         return Draft(self)
 
@@ -184,9 +112,6 @@ class Prog(Calc):
 
     def _calc_pp(self):
         return tomlhold.Holder.loads(self.text.pp)
-
-    def _calc_project(self):
-        return Project(self)
 
     def _calc_text(self):
         return Text(self)
@@ -309,16 +234,6 @@ class Prog(Calc):
     def py(*args):
         args = [sys.executable, "-m"] + list(args)
         return subprocess.run(args)
-
-    def pypi(self):
-        shutil.rmtree("dist", ignore_errors=True)
-        if utils.py("build").returncode:
-            return
-        args = ["twine", "upload", "dist/*"]
-        token = self.kwargs["token"]
-        if token != "":
-            args += ["-u", "__token__", "-p", token]
-        subprocess.run(args)
 
     def save(self, n, /):
         file = getattr(self.file, n)

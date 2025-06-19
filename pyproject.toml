@@ -22,12 +22,10 @@ classifiers = [
 dependencies = [
     "black>=24.4.2",
     "bs4>=0.0.2",
-    "build>=1.2.1",
     "filelisting>=1.2.4",
     "isort>=5.9.3",
     "requests>=2.31",
     "tomlhold>=0.1.3",
-    "twine>=5.1.1",
     "v440>=1.0.5",
 ]
 description = "Create/autocomplete/format a python project and upload it to PyPI."
