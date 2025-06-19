@@ -1,0 +1,15 @@
+[default]
+author = "Johannes"
+classifiers = "{preset}, {mit}, Natural Language :: English, Operating System :: OS Independent, Programming Language :: Python, Programming Language :: Python :: 3, Programming Language :: Python :: 3 :: Only, Typing :: Typed"
+description = ""
+development_status = "infer"
+email = "johannes-programming@mailfence.com"
+github = "johannes-programming"
+requires_python = "{preset} \\| >=3.11"
+token = ""
+v = "bump(2, 1)"
+vformat = "3"
+year = "{current}"
+
+[general]
+root = "~/Desktop"

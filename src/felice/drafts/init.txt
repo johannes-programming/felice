@@ -1,0 +1,5 @@
+from {project}.core import *
+from {project}.tests import *
+
+if __name__ == '__main__':
+    main()

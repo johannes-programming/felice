@@ -1,0 +1,2 @@
+include src/felice/drafts/*.txt
+exclude src/felice/config.toml
