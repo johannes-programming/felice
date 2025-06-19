@@ -1,0 +1,134 @@
+/* General Body Styling */
+body {
+    font-family: "Avenir Next";
+    font-size: 16;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 50px;
+    
+}
+
+code {
+    /*font-family: Menlo;*/
+    font-size: 100%;
+    font-weight: normal;
+}
+
+footer {
+    margin-top: 50px;
+    font-size: 12px;
+    color: #777;
+}
+
+h1 {
+    font-size: 32;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 26;
+    font-weight: normal;
+}
+h3 {
+    font-size: 23;
+    font-weight: normal;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+pre {
+    border: 2px solid #7F7F7F; /* Black border */
+    border-radius: 5px;
+    padding: 0px 20px;
+    
+}
+
+/* Section and Content Styling */
+section {
+    margin: 20px 0;
+}
+
+strong {
+    font-weight: normal;
+    font-family: Menlo;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    
+    border: 1px solid black;
+    font-weight: bold;
+    background-color: #f2f2f2;
+    
+    padding: 10px;
+    text-align: left;
+}
+
+
+
+/* Back to Top Link */
+
+.back-to-top a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+
+.content {
+    margin: 20px;
+}
+
+
+
+
+
+/* Links on the Startpage */
+.links {
+    margin: 30px 0;
+    text-align: center;
+}
+.links a {
+    display: block;
+    margin: 15px 0;
+    font-size: 1.2em;
+    color: #4CAF50;
+    text-decoration: none;
+    padding: 10px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.links a:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Navigation Links */
+.navigation-links {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.navigation-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
